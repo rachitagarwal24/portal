@@ -1,0 +1,24 @@
+<?xml version="1.0"?>
+<!DOCTYPE hibernate-mapping PUBLIC "-//Hibernate/Hibernate Mapping DTD 3.0//EN"
+"http://hibernate.sourceforge.net/hibernate-mapping-3.0.dtd">
+<!-- Generated 6 Jul, 2017 11:13:19 AM by Hibernate Tools 3.5.0.Final -->
+<hibernate-mapping>
+    <class name="com.portal.Player" table="login">
+        <id name="loginid" type="int">
+            <column name="loginid" />
+            <generator class="assigned" />
+        </id>
+        <property name="name" type="java.lang.String">
+            <column name="name" />
+        </property>
+        <property name="email" type="java.lang.String">
+            <column name="email" />
+        </property>
+        <property name="password" type="java.lang.String">
+            <column name="password" />
+        </property>
+        <property name="phoneno" type="int">
+            <column name="phoneno" />
+        </property>
+    </class>
+</hibernate-mapping>
