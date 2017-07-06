@@ -9,13 +9,26 @@
 <title>portal</title>
 </head>
 <body>
-	<s:form action="addPlayer">
+	<!--<s:form action="addPlayer">
 	<s:textfield name="name" lable="Player's Name " />
 	<s:textfield name="email" lable="Email "/>
 	<s:textfield name="password" lable="Password "/>
 	<s:textfield name="phoneno" lable="Phone No "/>
 	<s:submit />
 	</s:form>
+	-->
+	
+	
+	<form action="addPlayer">
+	Name  <input type="text" name="name"></br>
+	Email <input type="text" name="email"></br>
+	Password  <input type="password" name="password"></br>
+	Phone No <input type="text" name="phoneno"> </br>
+	<input type="submit" value="submit" >
+	
+	
+	</form>
+	
 
 </body>
 </html>
