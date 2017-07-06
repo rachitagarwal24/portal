@@ -1,0 +1,2 @@
+14:43:18,368 ERROR [STDERR] Failed to create sessionFactory object.org.hibernate.HibernateException: Could not parse configuration: /hibernate.cfg.xml
+14:43:18,368 ERROR [[default]] Servlet.service() for servlet default threw exception
