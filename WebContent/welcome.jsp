@@ -8,7 +8,9 @@
 <title>ALL Records</title>
 </head>
 <body>
-<h3>All Records:</h3>  
+<h3>All Records:</h3> 
+
+<!--  
 <s:iterator  value="list">  
 <fieldset>  
 <s:property value="id"/><br/>  
@@ -18,5 +20,24 @@
 
 </fieldset>  
 </s:iterator>  
+ -->
+ <table>
+      <tr>
+         <td>ID</td>
+         <td>Name</td>
+         <td>Password</td>
+         <td>Phone No</td>
+      </tr>
+      <s:iterator value="player">	
+         <tr>
+            <td><s:property value="id"/></td>
+            <td><s:property value="name"/></td>
+            <td><s:property value="password"/></td>
+            <td><s:property value="PhoneNo"/></td>
+           </tr>
+      </s:iterator>	
+   </table>
+ 
+ 
 </body>
 </html>
