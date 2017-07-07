@@ -2,3 +2,6 @@
 14:43:18,368 ERROR [[default]] Servlet.service() for servlet default threw exception
 
 Resolved by chetan sir : by changing url of config file :- http://hibernate.sourceforge.net/hibernate-configuration-3.0.dtd
+
+
+Login page is yet to be made

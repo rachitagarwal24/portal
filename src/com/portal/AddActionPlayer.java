@@ -1,5 +1,8 @@
 package com.portal;
 
+import java.util.ArrayList;
+import java.util.List;
+
 import com.opensymphony.xwork2.ActionSupport;
 import com.opensymphony.xwork2.ModelDriven;
 
@@ -7,24 +10,46 @@ public class AddActionPlayer extends ActionSupport implements ModelDriven<Player
 
 	Player player=new Player();
 	PlayerDao dao=new PlayerDao();
-	
+	List<Player> players=new ArrayList<Player>();
 	
 	public Player getModel() {
 		return player;
 	}
 	
 	public String execute(){
-		dao.addPlayer(player);
+		int i=dao.addPlayer(player);
 		
-		return "success";
-		
+		//if(i>0)
+	//	{
+			return "success";
+		/*}	
+		else
+		{
+			System.out.println("no");
+			return "error";
+		}
+		*/
 	}
+	
+	public String listPlayers(){
+		players = dao.getPlayers();
+			
+		return "success";
+	}
+	
 	public Player getPlayer(){
 		return player;
 	}
-	
 	public void setPlayer(Player player){
 		this.player=player;
+	}
+	
+	public List<Player> getPlayers() {
+		return players;
+	}
+
+	public void setPlayers(List<Player> players) {
+		this.players = players;
 	}
 	/*
 	 * 

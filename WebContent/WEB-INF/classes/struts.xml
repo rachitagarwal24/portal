@@ -9,8 +9,16 @@
    <package name="myhibernate" extends="struts-default">
 
       <action name="addPlayer" method="execute" class="com.portal.AddActionPlayer">
-         <result name="success" type="redirect">/student.jsp</result>
+         <result name="success" type="redirect">listPlayers</result>
+         <result name="error" type="redirect">register-error.jsp</result>  
       </action>
+      
+      
+      <action name="listPlayers" method="listPlayers"
+         class="com.portal.AddActionPlayer">
+         <result name="success" type="redirect">/welcome.jsp</result>
+      </action>
+      
 	</package>
 </struts>
 
