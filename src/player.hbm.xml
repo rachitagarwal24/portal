@@ -17,7 +17,7 @@
         <property name="password" type="java.lang.String">
             <column name="password" />
         </property>
-        <property name="phoneno" type="int">
+        <property name="phoneno" type="java.lang.String">
             <column name="phoneno" />
         </property>
     </class>

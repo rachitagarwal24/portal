@@ -5,11 +5,11 @@ public class Player {
 	private String name;
 	private String email;
 	private String password;
-	private int phoneno;
+	private String phoneno;
 	
 	public Player(){}
 	
-	public Player(int loginid, String name, String email, String password, int phoneno) {
+	public Player(int loginid, String name, String email, String password, String phoneno) {
 		this.loginid = loginid;
 		this.name = name;
 		this.email = email;
@@ -39,8 +39,8 @@ public class Player {
 
 	public void setEmail(String email) {
 		this.email = email;
-	}
 
+	}
 	public String getPassword() {
 		return password;
 	}
@@ -49,11 +49,11 @@ public class Player {
 		this.password = password;
 	}
 
-	public int getPhoneno() {
+	public String getPhoneno() {
 		return phoneno;
 	}
 
-	public void setPhoneno(int phoneno) {
+	public void setPhoneno(String phoneno) {
 		this.phoneno = phoneno;
 	}
 	   

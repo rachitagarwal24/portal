@@ -17,8 +17,8 @@ public class AddActionPlayer extends ActionSupport implements ModelDriven<Player
 		dao.addPlayer(player);
 		
 		return "success";
+		
 	}
-	
 	public Player getPlayer(){
 		return player;
 	}
@@ -26,5 +26,15 @@ public class AddActionPlayer extends ActionSupport implements ModelDriven<Player
 	public void setPlayer(Player player){
 		this.player=player;
 	}
+	/*
+	 * 
+	 * For Custom validation 
+	public void validate() {  
+	    if(player.getName().length()<1)  
+	        addFieldError("name","Name can't be blank");  
+	    if(player.getPassword().length()<6)  
+	        addFieldError("password","Password must be greater than 5");  
+	}  
+	*/
 	
 }

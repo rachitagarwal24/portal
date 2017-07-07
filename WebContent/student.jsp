@@ -19,11 +19,12 @@
 	-->
 	
 	
-	<form action="addPlayer">
+	<form action="addPlayer" validate="true" >
 	Name  <input type="text" name="name"></br>
 	Email <input type="text" name="email"></br>
 	Password  <input type="password" name="password"></br>
 	Phone No <input type="text" name="phoneno"> </br>
+	Date of Birth <input type="date" name="dof"></br>
 	<input type="submit" value="submit" >
 	
 	
