@@ -17,6 +17,7 @@
       <action name="listPlayer" method="listPlayers"
          class="com.portal.AddActionPlayer">
          <result name="success">/welcome.jsp</result>
+         
       </action>
       
 	</package>
