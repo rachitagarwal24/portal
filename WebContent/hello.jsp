@@ -9,5 +9,8 @@
 <body>
 <b>Welcome,<s:property value="name"/></b>
 
+</br>
+	<a href="logout">logout</a>
+
 </body>
 </html>
