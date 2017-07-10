@@ -1,6 +1,7 @@
 package com.portal;
 
 import java.util.ArrayList;
+import java.util.Iterator;
 import java.util.List;
 
 import com.opensymphony.xwork2.ActionSupport;
@@ -33,6 +34,13 @@ public class AddActionPlayer extends ActionSupport implements ModelDriven<Player
 	
 	public String listPlayers(){
 		players = dao.getPlayers();
+		/*
+		 for (Iterator iterator = players.iterator(); iterator.hasNext();){
+				Player employee = (Player) iterator.next(); 
+				System.out.print("YEs: " + employee.getName()); 
+				
+		 }
+		 */
 			
 		return "success";
 	}
@@ -56,7 +64,7 @@ public class AddActionPlayer extends ActionSupport implements ModelDriven<Player
 	 * For Custom validation 
 	public void validate() {  
 	    if(player.getName().length()<1)  
-	        addFieldError("name","Name can't be blank");  
+	        addFieldError("name","Namze can't be blank");  
 	    if(player.getPassword().length()<6)  
 	        addFieldError("password","Password must be greater than 5");  
 	}  

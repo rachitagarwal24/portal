@@ -1,6 +1,7 @@
 package com.portal;
 
 import java.util.ArrayList;
+import java.util.Iterator;
 import java.util.List;
 
 import org.hibernate.HibernateException;
@@ -53,8 +54,17 @@ public class PlayerDao {
 	   try
 	   {
 		   tx=session.beginTransaction();
-		   players=session.createQuery("from Player").list();
-			  
+		   players=session.createQuery("from com.portal.Player").list();
+		   
+		   /*
+		   for (Iterator iterator = players.iterator(); iterator.hasNext();){
+				Player employee = (Player) iterator.next(); 
+				System.out.print("First Name: " + employee.getName()); 
+				
+			}
+		    
+		    */
+		   tx.commit();
 	   }catch(HibernateException e){
 		   if(tx!=null)
 			   tx.rollback();
