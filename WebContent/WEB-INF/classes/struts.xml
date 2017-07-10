@@ -7,7 +7,19 @@
    <constant name="struts.devMode" value="true" />
 
    <package name="myhibernate" extends="struts-default">
-
+      <action name="login">  
+		<result>login.jsp</result>  
+	  </action>  
+     
+      
+      
+      
+      <action name="loginprocess" method="execute" class="com.portal.LoginAction">
+      	 <result name="success">/hello.jsp</result>
+         <result name="input" type="redirect">/student.jsp</result>
+      </action>
+      
+      
       <action name="addPlayer" method="execute" class="com.portal.AddActionPlayer">
          <result name="success" type="redirect">listPlayer</result>
          <result name="error" type="redirect">register-error.jsp</result>  

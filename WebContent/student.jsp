@@ -30,6 +30,9 @@
 	
 	</form>
 	
+	</br>
+	<a href="login">login</a>
+	
 
 </body>
 </html>

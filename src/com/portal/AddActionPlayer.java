@@ -44,7 +44,7 @@ public class AddActionPlayer extends ActionSupport implements ModelDriven<Player
 			
 		return "success";
 	}
-	
+		
 	public Player getPlayer(){
 		return player;
 	}
