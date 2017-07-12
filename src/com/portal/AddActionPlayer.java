@@ -9,6 +9,7 @@ import com.opensymphony.xwork2.ModelDriven;
 
 public class AddActionPlayer extends ActionSupport implements ModelDriven<Player> {
 
+	
 	Player player=new Player();
 	PlayerDao dao=new PlayerDao();
 	List<Player> players=new ArrayList<Player>();

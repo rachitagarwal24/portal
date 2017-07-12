@@ -1,0 +1,25 @@
+<?xml version="1.0"?>
+<!DOCTYPE hibernate-mapping PUBLIC "-//Hibernate/Hibernate Mapping DTD 3.0//EN"
+"http://hibernate.sourceforge.net/hibernate-mapping-3.0.dtd">
+<!-- Generated 12 Jul, 2017 11:45:05 AM by Hibernate Tools 3.5.0.Final -->
+<hibernate-mapping>
+    <class name="com.portal.PlayerInfo" table="PLAYERINFO">
+        <id name="loginId" type="int">
+            <column name="LOGINID" />
+            <generator class="assigned" />
+        </id>
+        <property name="fname" type="java.lang.String">
+            <column name="FNAME" />
+        </property>
+        <property name="lname" type="java.lang.String">
+            <column name="LNAME" />
+        </property>
+        
+        <property name="phoneno" type="java.lang.String">
+            <column name="PHONENO" />
+        </property>
+        <many-to-one name="address" class="com.portal.Address" not-null="true" cascade="all" unique="true" 	>
+            <column name="ADDRESS" />
+        </many-to-one>
+    </class>
+</hibernate-mapping>

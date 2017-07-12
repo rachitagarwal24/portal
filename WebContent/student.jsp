@@ -32,7 +32,7 @@
 	
 	</br>
 	<a href="login">login</a>
-	
+	<a href="register1">register-many-to-one</a>
 
 </body>
 </html>

@@ -62,7 +62,4 @@ public class LoginAction extends ActionSupport implements ModelDriven<Player>,Se
         sessionmap.invalidate();  
         return "success";  
     }  
-
-	
-
 }
