@@ -9,7 +9,7 @@
 <body>
 <s:actionerror/>
 <s:form action="loginprocess">  
-<s:textfield name="name" label="Name"></s:textfield>  
+<s:textfield name="email" label="Email"></s:textfield>  
 <s:textfield name="password" label="Password"></s:textfield>  
 <s:submit value="login"></s:submit>  
 </s:form>  

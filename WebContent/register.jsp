@@ -16,6 +16,7 @@
 	First name  <input type="text" name="fname"></br>
 	Last name  <input type="text" name="lname"></br>
 	Phone No <input type="text" name="phoneno"> </br>
+	Age <input type="text" name="age"> </br>
 	Address_Street <input type="text" name="street"> </br>
 	Address_City <input type="text" name="city"> </br>
 	

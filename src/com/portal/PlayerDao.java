@@ -56,7 +56,7 @@ public class PlayerDao {
 	        // System.out.println("YAHA"+playerInfo.getAddress().getCity());
 	         
 	       //  session.save(address);
-	         PlayerInfo playerInfo2=new PlayerInfo(playerInfo.getFname(),playerInfo.getLname(),playerInfo.getPhoneno(),address);
+	         PlayerInfo playerInfo2=new PlayerInfo(playerInfo.getFname(),playerInfo.getLname(),playerInfo.getPhoneno(),playerInfo.getAge(),address);
 	         PlayerAuth playerAuth2=new PlayerAuth(playerAuth.getEmail(), playerAuth.getPassword(), playerInfo2);
 	         playerID = (Integer) session.save(playerAuth2);
 	         
@@ -74,18 +74,18 @@ public class PlayerDao {
 	   }
 	   
 	
-   public boolean find(String name,String password){
+   public boolean find(String email,String password){
 	   Session session=factory.openSession();
 	   Transaction tx=null;
 	   
-	   System.out.println("Name is "+name+"Password is"+password);
+	   System.out.println("Name is "+email+"Password is"+password);
 	   
 	   
 	   try{
 		   tx=session.beginTransaction();
-		   String sql = " from com.portal.Player u where u.name=:name and u.password=:pass";
+		   String sql = " from com.portal.PlayerAuth u where u.email=:email and u.password=:pass";
 	        Query query = session.createQuery(sql);
-	        query.setParameter("name", name);
+	        query.setParameter("email", email);
 	        query.setParameter("pass", password);
 	        List<Player> list = query.list();
 	        if (list.size() > 0) {

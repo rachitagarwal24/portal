@@ -18,6 +18,9 @@
         <property name="phoneno" type="java.lang.String">
             <column name="PHONENO" />
         </property>
+        <property name="age" type="int">
+            <column name="AGE" />
+        </property>
         <many-to-one name="address" class="com.portal.Address" not-null="true" cascade="all" unique="true" 	>
             <column name="ADDRESS" />
         </many-to-one>

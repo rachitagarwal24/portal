@@ -21,7 +21,7 @@
 
 <div class="container">
  <div class="raw">   
-      <!-- Modal content-->
+ 
     <div class="modal-content">
       <div class="modal-header" style="padding:35px 200px;">
         <h4>Portal - Player's Login </h4>
@@ -40,14 +40,14 @@
             <div class = "tab-pane fade in active" id = "login">
 
               <div class="modal-body" style="padding:40px 250px;">
-                <form role="form">
+                <form role="form" action="loginprocess">
                   <div class="form-group">
                     <label for="usrname">Enter Email</label>
-                    <input type="text" class="form-control" id="email" placeholder="Enter email">
+                    <input type="text" class="form-control" name="email" placeholder="Enter email">
                   </div>
                   <div class="form-group">
                     <label for="psw">Password</label>
-                    <input type="text" class="form-control" id="psw" placeholder="Enter password">
+                    <input type="password" class="form-control" name="password" placeholder="Enter password">
                   </div>
                   
                     <button type="submit" class="btn btn-block">Login</button>
@@ -57,7 +57,7 @@
             <div class = "tab-pane fade" id = "register">
 
               <div class="modal-body" style="padding:40px 250px;">
-                <form role="form">
+                <form role="form"  action="registermany" validate="true">
                   <div class="form-group">
                     <label for="fname">First Name</label>
                     <input type="text" class="form-control" name="fname" placeholder="First name">
@@ -75,13 +75,30 @@
                     <input type="password" class="form-control" name="password" placeholder="Enter password">
                   </div>
                   <div class="form-group">
-                    <label for="dof">Enter Date of Birth</label>
-                    <input type="date" class="form-control" name="dof" placeholder="Enter date">
+                    <label for="dof">Enter Age</label>
+                    <input type="text" class="form-control" name="age" placeholder="Enter date">
                   </div>
                   <div class="form-group">
                     <label for="phoneno">Enter Phone No</label>
                     <input type="tel" class="form-control" name="phoneno" placeholder="Enter phoneno">
                   </div>
+                  <div class="form-group">
+                    <label for="street">Enter Address-Street</label>
+                    <input type="text" class="form-control" name="street" placeholder="Enter street name and no.">
+                  </div>
+                  <div class="form-group">
+                    <label for="city">Enter Address-City</label>
+                    <input type="text" class="form-control" name="city" placeholder="Enter City">
+                  </div>
+                  <div class="form-group">
+                    <label for="state">Enter Address-State</label>
+                    <input type="text" class="form-control" name="state" placeholder="Enter State">
+                  </div>
+                  <div class="form-group">
+                    <label for="zipcode">Enter Address-ZipCode</label>
+                    <input type="text" class="form-control" name="zipcode" placeholder="Enter Pincode">
+                  </div>
+
 
                   <button type="submit" class="btn btn-block">Register</button>
                 </form>

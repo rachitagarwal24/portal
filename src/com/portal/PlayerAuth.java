@@ -7,6 +7,9 @@ public class PlayerAuth implements java.io.Serializable {
 	private String password;
 	private PlayerInfo playerInfo;
 	
+	public PlayerAuth(){
+	}
+	
 	public PlayerAuth(String email, String password,PlayerInfo playerInfo) {
 		this.email = email;
 		this.password = password;

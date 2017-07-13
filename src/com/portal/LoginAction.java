@@ -8,35 +8,16 @@ import org.apache.struts2.interceptor.SessionAware;
 import com.opensymphony.xwork2.ActionSupport;
 import com.opensymphony.xwork2.ModelDriven;
 
-public class LoginAction extends ActionSupport implements ModelDriven<Player>,SessionAware  {
+public class LoginAction extends ActionSupport implements ModelDriven<PlayerAuth>,SessionAware  {
 	 
-	//   private static final long serialVersionUID = 1L;   
-	SessionMap<String,String> sessionmap;  
-	public Player getModel() {
-		// TODO Auto-generated method stub
-		return player;
-	}    
-    PlayerDao dao = new PlayerDao();
-    Player player=new Player();
-    /*
-    @Override
-    public void validate() {
-        if (player.getName().length() == (0)) {
-            this.addFieldError("name", "Name is required");
-        }
-        if (player.getPassword().length() == (0)) {
-            this.addFieldError("password", "Password is required");
-        }
-    }
-    */
- 
+	SessionMap<String,String> sessionmap;
+    PlayerAuth playerAuth=new PlayerAuth();  
+	PlayerDao dao = new PlayerDao();
+    
     @Override
     public String execute() {
-        if (dao.find(player.getName(), player.getPassword())) {
-        	
-        	System.out.println("YeS");
-        	
-            return SUCCESS;
+        if (dao.find(playerAuth.getEmail(), playerAuth.getPassword())) {
+             return SUCCESS;
         } else {
             this.addActionError("Invalid username and password");
         }
@@ -44,16 +25,17 @@ public class LoginAction extends ActionSupport implements ModelDriven<Player>,Se
         return INPUT;
     }
      
-    public Player getPlayer() {
-        return player;
-    }
- 
-    public void setPlayer(Player player) {
-        this.player = player;
-    }
+    
+    public PlayerAuth getPlayerAuth() {
+		return playerAuth;
+	}
 
-    public void setSession(Map map) {
-		// TODO Auto-generated method stub
+
+	public void setPlayerAuth(PlayerAuth playerAuth) {
+		this.playerAuth = playerAuth;
+	}
+
+	public void setSession(Map map) {
 		sessionmap=(SessionMap)map;
 		sessionmap.put("login", "true");
 	}
@@ -61,5 +43,11 @@ public class LoginAction extends ActionSupport implements ModelDriven<Player>,Se
     public String logout(){  
         sessionmap.invalidate();  
         return "success";  
-    }  
+    }
+
+
+	public PlayerAuth getModel() {
+		// TODO Auto-generated method stub
+		return playerAuth;
+	}  
 }

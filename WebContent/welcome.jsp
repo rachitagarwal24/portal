@@ -3,6 +3,8 @@
 <%@ taglib uri="/struts-tags" prefix="s" %>  
 <html>
 <head>
+ 
+ 
 <title>ALL Records</title>
 </head>
 <body>

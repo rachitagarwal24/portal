@@ -7,7 +7,7 @@
 <title>Insert title here</title>
 </head>
 <body>
-<b>Welcome,<s:property value="name"/></b>
+<b>Welcome,<s:property value="email"/></b>
 
 </br>
 	<a href="logout">logout</a>

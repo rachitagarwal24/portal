@@ -69,6 +69,8 @@ public class AddActionRegister extends ActionSupport implements ModelDriven<Play
 
 	public String execute(){
 		//System.out.println("aaaAAAAA"+street);
+		
+		System.out.println("AAAAAAA"+playerInfo.getAge());
 		int i=dao.addRegister(new Address(street,city,state,zipcode),playerInfo,new PlayerAuth(email, password, playerInfo));
 		 return "success";
 	}

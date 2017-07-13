@@ -1,26 +1,30 @@
 package com.portal;
 
+import java.util.Date;
+
 public class PlayerInfo implements java.io.Serializable {
 	
 	private int loginId;
 	private String fname;
 	private String lname;
 	private String phoneno;
+	private int age;
 	private Address address;
 	
 	public PlayerInfo(){
 	}
 	
-	public PlayerInfo(Address address){
+	/*
+	 * public PlayerInfo(Address address){
 		this.address=address;
 	}
-	
-	public PlayerInfo(String fname, String lname, String phoneno, Address address) {
+	*/
+	public PlayerInfo(String fname, String lname, String phoneno, int age,Address address) {
 		this.fname = fname;
 		this.lname = lname;
-		
 		this.phoneno = phoneno;
 		this.address = address;
+		this.age=age;
 	}
 
 	public int getLoginId() {
@@ -47,6 +51,15 @@ public class PlayerInfo implements java.io.Serializable {
 	public void setPhoneno(String phoneno) {
 		this.phoneno = phoneno;
 	}
+	
+	public int getAge() {
+		return age;
+	}
+
+	public void setAge(int age) {
+		this.age = age;
+	}
+
 	public Address getAddress() {
 		return address;
 	}
