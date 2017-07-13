@@ -10,6 +10,9 @@
 <body>
 
 	<form action="registermany" validate="true" >
+	
+	Enter Email <input type="text" name="email"></br>
+	Enter Password <input type="text" name="password"></br>
 	First name  <input type="text" name="fname"></br>
 	Last name  <input type="text" name="lname"></br>
 	Phone No <input type="text" name="phoneno"> </br>

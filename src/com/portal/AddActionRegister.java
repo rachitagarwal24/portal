@@ -12,9 +12,27 @@ public class AddActionRegister extends ActionSupport implements ModelDriven<Play
 	private String state;
 	private String city;
 	private String zipcode;
+	private String email;
+	private String password;
 	
 	public String getStreet() {
 		return street;
+	}
+
+	public String getEmail() {
+		return email;
+	}
+
+	public void setEmail(String email) {
+		this.email = email;
+	}
+
+	public String getPassword() {
+		return password;
+	}
+
+	public void setPassword(String password) {
+		this.password = password;
 	}
 
 	public void setStreet(String street) {
@@ -50,11 +68,8 @@ public class AddActionRegister extends ActionSupport implements ModelDriven<Play
 	PlayerDao dao=new PlayerDao();
 
 	public String execute(){
-		
-		
-		System.out.println("aaaAAAAA"+street);
-	        
-		int i=dao.addRegister(new Address(street,city,state,zipcode),playerInfo);
+		//System.out.println("aaaAAAAA"+street);
+		int i=dao.addRegister(new Address(street,city,state,zipcode),playerInfo,new PlayerAuth(email, password, playerInfo));
 		 return "success";
 	}
 

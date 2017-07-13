@@ -21,7 +21,7 @@
 	 </action>  
      
      <action name="registermany" class="com.portal.AddActionRegister" method="execute">
-     	<result name="success">login.jsp</result>
+     	<result name="success" type="redirect">login.jsp</result>
      </action> 
       
       

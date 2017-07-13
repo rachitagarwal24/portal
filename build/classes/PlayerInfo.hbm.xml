@@ -6,7 +6,7 @@
     <class name="com.portal.PlayerInfo" table="PLAYERINFO">
         <id name="loginId" type="int">
             <column name="LOGINID" />
-            <generator class="assigned" />
+            <generator class="native" />
         </id>
         <property name="fname" type="java.lang.String">
             <column name="FNAME" />

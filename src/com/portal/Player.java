@@ -15,7 +15,12 @@ public class Player {
 		this.email = email;
 		this.password = password;
 		this.phoneno = phoneno;
-	}
+	} 
+    // Address address1 = new Address("OMR Road", "Chennai", "TN", "600097");
+    // PlayerInfo playerInfo2=new PlayerInfo("Rachit","Agarwal","829389",address1);
+    // playerID=(Integer)session.save(playerInfo2);
+     
+    // System.out.println("YAHA"+playerInfo.getAddress().getCity());
 
 	public int getLoginid() {
 		return loginid;
