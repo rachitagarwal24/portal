@@ -1,6 +1,7 @@
 package com.portal;
 
 import java.util.ArrayList;
+import java.util.Iterator;
 import java.util.List;
 
 import com.opensymphony.xwork2.ActionSupport;
@@ -14,6 +15,7 @@ public class AddActionRegister extends ActionSupport implements ModelDriven<Play
 	private String zipcode;
 	private String email;
 	private String password;
+	
 	
 	public String getStreet() {
 		return street;
@@ -66,6 +68,7 @@ public class AddActionRegister extends ActionSupport implements ModelDriven<Play
 
 	PlayerInfo playerInfo=new PlayerInfo();
 	PlayerDao dao=new PlayerDao();
+	List playerinfos=new ArrayList();
 
 	public String execute(){
 		//System.out.println("aaaAAAAA"+street);
@@ -73,6 +76,25 @@ public class AddActionRegister extends ActionSupport implements ModelDriven<Play
 		System.out.println("AAAAAAA"+playerInfo.getAge());
 		int i=dao.addRegister(new Address(street,city,state,zipcode),playerInfo,new PlayerAuth(email, password, playerInfo));
 		 return "success";
+	}
+	
+	public String listPlayerInfo(){
+		
+		playerinfos=dao.getPlayerInfos();
+		
+		
+		
+		return "success";
+		
+	}
+	
+	
+	public List<PlayerInfo> getPlayerinfos() {
+		return playerinfos;
+	}
+
+	public void setPlayerinfos(List<PlayerInfo> playerinfos) {
+		this.playerinfos = playerinfos;
 	}
 
 	public PlayerInfo getPlayerInfo() {

@@ -132,6 +132,50 @@ public class PlayerDao {
 	   return players;
    }
    
+   public List getPlayerInfos()
+   {
+	   List playerinfos=new ArrayList();
+	   List playerinfos1=new ArrayList();
+	   List playerinfos2=new ArrayList();
+	   Session session=factory.openSession();
+	   Transaction tx=null;
+	   try
+	   {
+		   tx=session.beginTransaction();
+		   playerinfos1=session.createQuery("from com.portal.PlayerInfo").list();
+		   playerinfos2=session.createQuery("from com.portal.Address").list();
+		   /*
+		   for (Iterator iterator = players.iterator(); iterator.hasNext();){
+				Player employee = (Player) iterator.next(); 
+				System.out.print("First Name: " + employee.getName()); 
+				
+			}
+		    */
+		   
+		   for (Iterator iterator = playerinfos2.iterator(); iterator.hasNext();){
+				Address employee = (Address) iterator.next(); 
+				System.out.print("First Name: " + employee.getStreet()); 
+				
+			}
+		
+		   playerinfos.addAll(playerinfos1);
+		   playerinfos.addAll(playerinfos2);
+		   
+		   tx.commit();
+	   }catch(HibernateException e){
+		   if(tx!=null)
+			   tx.rollback();
+		   e.printStackTrace();
+	
+	   }finally {
+		   session.close();
+		
+	   }
+	   
+	   
+	   
+	   return playerinfos;
+   }
       
 }
 

@@ -23,6 +23,7 @@
 </head>
 <body>
 
+
 <div class="container">
  <div class="raw">
  <div class="modal-content">
@@ -33,21 +34,22 @@
 	 <table class="table">
 	      <thead>
 	      <tr>
-	         <th>ID</th>
+	         <th>Login ID</th>
 	         <th>Name</th>
-			 <th>Email</th>
-	         <th>Password</th>
-	         <th>Phone No</th>
+			 <th>Phone No</th>
+	         <th>Age</th>
+	         <th>Address Street</th>
+
 	      </tr>
 	      </thead>
-	      <s:iterator value="players">
+	      <s:iterator value="playerinfos">
 	      <tbody>
 	      <tr>
-	          <td><s:property value="loginid"/></td>
-	          <td><s:property value="name"/></td>
-	          <td><s:property value="email"/></td>
-	          <td><s:property value="password"/></td>
+	          <td><s:property value="loginId"/></td>
+	          <td><s:property value="fname"/> <s:property value="lname"/></td>
 	          <td><s:property value="phoneno"/></td>
+	          <td><s:property value="age"/></td>
+	          <td><s:property value="street"/></td>
 	      </tr>    
 	      </tbody>     
 	      </s:iterator>	

@@ -34,8 +34,8 @@
          <result name="error" type="redirect">register-error.jsp</result>  
       </action>
       
-      <action name="listPlayer" method="listPlayers"
-         class="com.portal.AddActionPlayer">
+      <action name="listPlayer" method="listPlayerInfo"
+         class="com.portal.AddActionRegister">
          <result name="success" >/welcome1.jsp</result>
          
       </action>
