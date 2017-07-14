@@ -22,6 +22,7 @@ public class PlayerDao {
 	         throw new ExceptionInInitializerError(ex); 
 	      }
 	}
+	
 
 	public Integer addPlayer(Player player){
       Session session = factory.openSession();
@@ -142,25 +143,53 @@ public class PlayerDao {
 	   try
 	   {
 		   tx=session.beginTransaction();
-		   playerinfos1=session.createQuery("from com.portal.PlayerInfo").list();
-		   playerinfos2=session.createQuery("from com.portal.Address").list();
-		   /*
-		   for (Iterator iterator = players.iterator(); iterator.hasNext();){
-				Player employee = (Player) iterator.next(); 
-				System.out.print("First Name: " + employee.getName()); 
-				
-			}
-		    */
 		   
-		   for (Iterator iterator = playerinfos2.iterator(); iterator.hasNext();){
-				Address employee = (Address) iterator.next(); 
-				System.out.print("First Name: " + employee.getStreet()); 
-				
-			}
+		   
+		 // playerinfos1=session.createQuery("from com.portal.PlayerInfo P join fetch P.address").list();
+		 Query query=session.createQuery("from com.portal.PlayerInfo P ,com.portal.Address A where P.address=A.addressId");
+			  
+		   
+		 //  playerinfos=session.createQuery("from com.portal.Address").list();
 		
-		   playerinfos.addAll(playerinfos1);
-		   playerinfos.addAll(playerinfos2);
+	/*	   for (Iterator iterator = playerinfos.iterator(); iterator.hasNext();){
+				//P employee = (PlayerInfo) iterator.next(); 
+			//	System.out.print("First Name: " + playerinfos.toString()); 
+				
+			}
+			*/
+		   //System.out.println(playerinfos.);
+		
+		
+		  // playerinfos.addAll(playerinfos1);
+		  // playerinfos.addAll(playerinfos2);
+		  /*
+		  for (Object result : query.list()) {
+			    PlayerInfo user = (PlayerInfo) result;
+			    System.out.println("RRRRRRRRRRRRRRRRRRRRRRRRRRRR"+user.getFname());
+			}
+		  */
+		 PlayerInfo info;
+		 Address addr;
+		 List<Object> result = (List<Object>) query.list(); 
+		 Iterator itr = result.iterator();
+		 while(itr.hasNext()){
+		    Object[] obj = (Object[]) itr.next();
+		    //now you have one array of Object for each row
+		    info=(PlayerInfo)obj[0];
+		    addr=(Address)obj[1];
+		   info.setAddress(addr);
+		   playerinfos.add(info);
 		   
+		    String client = String.valueOf(obj[1]); // don't know the type of column CLIENT assuming String 
+		    //Integer service = Integer.parseInt(String.valueOf(obj[1])); //SERVICE assumed as int
+		    
+		    System.out.println(":AAAAAAAAAAAA"+client);
+		    
+		    //same way for all obj[2], obj[3], obj[4]
+		 }
+		 
+		 
+		  
 		   tx.commit();
 	   }catch(HibernateException e){
 		   if(tx!=null)

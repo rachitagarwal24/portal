@@ -49,7 +49,7 @@
 	          <td><s:property value="fname"/> <s:property value="lname"/></td>
 	          <td><s:property value="phoneno"/></td>
 	          <td><s:property value="age"/></td>
-	          <td><s:property value="street"/></td>
+	          <td><s:property value="address.street"/></td>
 	      </tr>    
 	      </tbody>     
 	      </s:iterator>	
