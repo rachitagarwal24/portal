@@ -20,7 +20,7 @@ public class PlayerDao {
 	      }catch (Throwable ex) { 
 	         System.err.println("Failed to create sessionFactory object." + ex);
 	         throw new ExceptionInInitializerError(ex); 
-	      }
+	     }
 	}
 	
 
@@ -80,7 +80,6 @@ public class PlayerDao {
 	   Transaction tx=null;
 	   
 	   System.out.println("Name is "+email+"Password is"+password);
-	   
 	   
 	   try{
 		   tx=session.beginTransaction();

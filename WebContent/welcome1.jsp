@@ -38,7 +38,9 @@
 	         <th>Name</th>
 			 <th>Phone No</th>
 	         <th>Age</th>
-	         <th>Address Street</th>
+	         <th>Address</th>
+	         <th>Edit</th>
+	         
 
 	      </tr>
 	      </thead>
@@ -49,7 +51,8 @@
 	          <td><s:property value="fname"/> <s:property value="lname"/></td>
 	          <td><s:property value="phoneno"/></td>
 	          <td><s:property value="age"/></td>
-	          <td><s:property value="address.street"/></td>
+	          <td><s:property value="address.street"/>, <s:property value="address.city"/>,</br> <s:property value="address.state"/>, <s:property value="address.zipcode"/></td>
+	          <td><a href="#">Edit</a></td>
 	      </tr>    
 	      </tbody>     
 	      </s:iterator>	
