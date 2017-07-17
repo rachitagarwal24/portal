@@ -56,12 +56,9 @@ public class PlayerDao {
 	
    public boolean find(String email,String password){
 	   Session session=HibernateUtil.getSessionFactory().openSession();
-	   Transaction tx=null;
-	   
 	   System.out.println("Name is "+email+"Password is"+password);
 	   
 	   try{
-		   tx=session.beginTransaction();
 		   String sql = " from com.portal.PlayerAuth u where u.email=:email and u.password=:pass";
 	        Query query = session.createQuery(sql);
 	        query.setParameter("email", email);
@@ -73,79 +70,31 @@ public class PlayerDao {
 	        }
 		   
 		}catch(HibernateException e) {
-		   if(tx!=null)
-			   tx.rollback();
-		   e.printStackTrace();
+		    e.printStackTrace();
 	   }
 	   session.close();
 	   
 	   return false;
    }
    
-   public List<Player> getPlayers(){
-	   List<Player> players=new ArrayList<Player>();
-	   Session session=HibernateUtil.getSessionFactory().openSession();
-	   Transaction tx=null;
-	   try
-	   {
-		   tx=session.beginTransaction();
-		   players=session.createQuery("from com.portal.Player").list();
-		   /*
-		   for (Iterator iterator = players.iterator(); iterator.hasNext();){
-				Player employee = (Player) iterator.next(); 
-				System.out.print("First Name: " + employee.getName()); 
-				
-			}
-		    */
-		   tx.commit();
-	   }catch(HibernateException e){
-		   if(tx!=null)
-			   tx.rollback();
-		   e.printStackTrace();
-	
-	   }finally {
-		   session.close();
-		
-	   }
-	   return players;
-   }
    
    public List getPlayerInfos()
    {
 	   List<PlayerInfo> playerinfos=new ArrayList<>();
 	
 	   Session session=HibernateUtil.getSessionFactory().openSession();
-	   Transaction tx=null;
 	   try
 	   {
-		   tx=session.beginTransaction();
-		   
-		   
 		 // playerinfos1=session.createQuery("from com.portal.PlayerInfo P join fetch P.address").list();
 		 //Query query=session.createQuery("from com.portal.PlayerInfo P ,com.portal.Address A where P.address=A.addressId");
 		
-		   playerinfos=session.createCriteria(PlayerInfo.class).list();
-		 
-		 
+		 playerinfos=session.createCriteria(PlayerInfo.class).list();
 		 
 		 //Alternative code for owned session is closed error 
-		   
 		 
 		 //System.out.println("fsdfsdfsd");
-	//	String adr= playerinfos.get(0).getAddress().getZipcode();
-		
+		 //String adr= playerinfos.get(0).getAddress().getZipcode();
 		 
-		 
-		 
-		 
-		 /*playerinfos.get(0).setAddress(adr);
-		 System.out.println("cfasdfasda");*/
-		/* for (PlayerInfo object : playerinfos) {
-			
-			 
-		 }*/
-		   
-		   
 		 //  playerinfos=session.createQuery("from com.portal.Address").list();
 		
 	/*	   for (Iterator iterator = playerinfos.iterator(); iterator.hasNext();){
@@ -185,22 +134,14 @@ public class PlayerDao {
 		    //same way for all obj[2], obj[3], obj[4]
 		 }
 		 */
-		 
-		 
 		  
-		tx.commit();
 	   }catch(HibernateException e){
-		   if(tx!=null)
-			   tx.rollback();
-		   e.printStackTrace();
+			   e.printStackTrace();
 	
 	   }finally {
 		   session.close();
 		
 	   }
-	   
-	   
-	   
 	   return playerinfos;
    }
       

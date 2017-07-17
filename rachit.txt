@@ -25,6 +25,17 @@ Then we have to set Lazy=false or
 create a Address instance to fire query
 Solved by Chetan Sir
 
+/*
+
+ //Alternative code for owned session is closed error 
+		   
+		 
+		 //System.out.println("fsdfsdfsd");
+		 //String adr= playerinfos.get(0).getAddress().getZipcode();
+		
+
+*/
+
 
 
 
