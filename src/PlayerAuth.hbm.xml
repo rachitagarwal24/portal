@@ -14,7 +14,7 @@
         <property name="password" type="java.lang.String">
             <column name="PASSWORD" />
         </property>
-        <many-to-one name="playerInfo" class="com.portal.PlayerInfo" not-null="true" cascade="all" unique="true" 	>
+        <many-to-one name="playerInfo" class="com.portal.PlayerInfo" not-null="true" cascade="all" unique="true" >
             <column name="Login" />
         </many-to-one>
         

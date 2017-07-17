@@ -18,3 +18,14 @@ git config --global credential.helper 'cache --timeout 7200'
 
 
 
+////////////----------------///////////////////////ERROR LOG
+Owned Session is not closed 
+
+Then we have to set Lazy=false or
+create a Address instance to fire query
+Solved by Chetan Sir
+
+
+
+
+

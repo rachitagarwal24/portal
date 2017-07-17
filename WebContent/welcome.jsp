@@ -18,14 +18,16 @@
          <td>Password</td>
          <td>Phone No</td>
       </tr>
-      <s:iterator value="players">
+      <s:iterator value="playerinfos">
       <tr>
-          <td><s:property value="loginid"/></td>
-          <td><s:property value="name"/></td>
-          <td><s:property value="email"/></td>
-          <td><s:property value="password"/></td>
-          <td><s:property value="phoneno"/></td>
-      </tr>    
+          <td><s:property value="loginId"/></td>
+          <td><s:property value="fname"/></td>
+          <td><s:property value="lname"/></td>
+          <td><s:property value="age"/></td>
+         	<td><s:property value="address.street"/></td>
+   
+          
+               </tr>    
            
       </s:iterator>	
    </table>

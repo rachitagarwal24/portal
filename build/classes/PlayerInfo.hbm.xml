@@ -21,7 +21,7 @@
         <property name="age" type="int">
             <column name="AGE" />
         </property>
-        <many-to-one name="address" class="com.portal.Address" not-null="true" cascade="all" unique="true" 	>
+        <many-to-one name="address" class="com.portal.Address" not-null="true" cascade="all" unique="true" lazy="false"	>
             <column name="ADDRESS" />
         </many-to-one>
     </class>

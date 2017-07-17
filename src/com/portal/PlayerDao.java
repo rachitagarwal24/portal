@@ -10,6 +10,7 @@ import org.hibernate.Session;
 import org.hibernate.SessionFactory;
 import org.hibernate.Transaction;
 import org.hibernate.cfg.Configuration;
+import org.hibernate.criterion.Restrictions;
 
 public class PlayerDao {	
 	
@@ -81,8 +82,7 @@ public class PlayerDao {
 	   return false;
    }
    
-   public List<Player> getPlayers()
-   {
+   public List<Player> getPlayers(){
 	   List<Player> players=new ArrayList<Player>();
 	   Session session=HibernateUtil.getSessionFactory().openSession();
 	   Transaction tx=null;
@@ -112,9 +112,8 @@ public class PlayerDao {
    
    public List getPlayerInfos()
    {
-	   List playerinfos=new ArrayList();
-	   List playerinfos1=new ArrayList();
-	   List playerinfos2=new ArrayList();
+	   List<PlayerInfo> playerinfos=new ArrayList<>();
+	
 	   Session session=HibernateUtil.getSessionFactory().openSession();
 	   Transaction tx=null;
 	   try
@@ -123,8 +122,29 @@ public class PlayerDao {
 		   
 		   
 		 // playerinfos1=session.createQuery("from com.portal.PlayerInfo P join fetch P.address").list();
-		 Query query=session.createQuery("from com.portal.PlayerInfo P ,com.portal.Address A where P.address=A.addressId");
-			  
+		 //Query query=session.createQuery("from com.portal.PlayerInfo P ,com.portal.Address A where P.address=A.addressId");
+		
+		   playerinfos=session.createCriteria(PlayerInfo.class).list();
+		 
+		 
+		 
+		 //Alternative code for owned session is closed error 
+		   
+		 
+		 //System.out.println("fsdfsdfsd");
+	//	String adr= playerinfos.get(0).getAddress().getZipcode();
+		
+		 
+		 
+		 
+		 
+		 /*playerinfos.get(0).setAddress(adr);
+		 System.out.println("cfasdfasda");*/
+		/* for (PlayerInfo object : playerinfos) {
+			
+			 
+		 }*/
+		   
 		   
 		 //  playerinfos=session.createQuery("from com.portal.Address").list();
 		
@@ -145,11 +165,13 @@ public class PlayerDao {
 			    System.out.println("RRRRRRRRRRRRRRRRRRRRRRRRRRRR"+user.getFname());
 			}
 		  */
+		 
+		 /*
 		 PlayerInfo info;
 		 Address addr;
 		 List<Object> result = (List<Object>) query.list(); 
 		 Iterator itr = result.iterator();
-		 while(itr.hasNext()){
+		 while(itr.hasNext()) {
 		    Object[] obj = (Object[]) itr.next();
 		    //now you have one array of Object for each row
 		    info=(PlayerInfo)obj[0];
@@ -162,10 +184,11 @@ public class PlayerDao {
 		    
 		    //same way for all obj[2], obj[3], obj[4]
 		 }
+		 */
 		 
 		 
 		  
-		   tx.commit();
+		tx.commit();
 	   }catch(HibernateException e){
 		   if(tx!=null)
 			   tx.rollback();
