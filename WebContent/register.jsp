@@ -13,15 +13,15 @@
 	
 	Enter Email <input type="text" name="email"></br>
 	Enter Password <input type="text" name="password"></br>
-	First name  <input type="text" name="fname"></br>
-	Last name  <input type="text" name="lname"></br>
-	Phone No <input type="text" name="phoneno"> </br>
-	Age <input type="text" name="age"> </br>
-	Address_Street <input type="text" name="street"> </br>
-	Address_City <input type="text" name="city"> </br>
+	First name  <input type="text" name="playerInfo.fname"></br>
+	Last name  <input type="text" name="playerInfo.lname"></br>
+	Phone No <input type="text" name="playerInfo.phoneno"> </br>
+	Age <input type="text" name="playerInfo.age"> </br>
+	Address_Street <input type="text" name="playerInfo.address.street"> </br>
+	Address_City <input type="text" name="playerInfo.address.city"> </br>
 	
-	Address_state <input type="text" name="state"> </br>
-	Address_zipcode <input type="text" name="zipcode"> </br>
+	Address_state <input type="text" name="playerInfo.address.state"> </br>
+	Address_zipcode <input type="text" name="playerInfo.address.zipcode"> </br>
 	
 	
 	

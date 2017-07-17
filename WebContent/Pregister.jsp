@@ -60,11 +60,11 @@
                 <form role="form"  action="registermany" validate="true">
                   <div class="form-group">
                     <label for="fname">First Name</label>
-                    <input type="text" class="form-control" name="fname" placeholder="First name">
+                    <input type="text" class="form-control" name="playerInfo.fname" placeholder="First name">
                   </div>
                   <div class="form-group">
                     <label for="lname">Last Name</label>
-                    <input type="text" class="form-control" name="lname" placeholder="Last name">
+                    <input type="text" class="form-control" name="playerInfo.lname" placeholder="Last name">
                   </div>
                   <div class="form-group">
                     <label for="email">Enter Email</label>
@@ -76,27 +76,27 @@
                   </div>
                   <div class="form-group">
                     <label for="dof">Enter Age</label>
-                    <input type="text" class="form-control" name="age" placeholder="Enter date">
+                    <input type="text" class="form-control" name="playerInfo.age" placeholder="Enter date">
                   </div>
                   <div class="form-group">
                     <label for="phoneno">Enter Phone No</label>
-                    <input type="tel" class="form-control" name="phoneno" placeholder="Enter phoneno">
+                    <input type="tel" class="form-control" name="playerInfo.phoneno" placeholder="Enter phoneno">
                   </div>
                   <div class="form-group">
                     <label for="street">Enter Address-Street</label>
-                    <input type="text" class="form-control" name="street" placeholder="Enter street name and no.">
+                    <input type="text" class="form-control" name="playerInfo.address.street" placeholder="Enter street name and no.">
                   </div>
                   <div class="form-group">
                     <label for="city">Enter Address-City</label>
-                    <input type="text" class="form-control" name="city" placeholder="Enter City">
+                    <input type="text" class="form-control" name="playerInfo.address.city" placeholder="Enter City">
                   </div>
                   <div class="form-group">
                     <label for="state">Enter Address-State</label>
-                    <input type="text" class="form-control" name="state" placeholder="Enter State">
+                    <input type="text" class="form-control" name="playerInfo.address.state" placeholder="Enter State">
                   </div>
                   <div class="form-group">
                     <label for="zipcode">Enter Address-ZipCode</label>
-                    <input type="text" class="form-control" name="zipcode" placeholder="Enter Pincode">
+                    <input type="text" class="form-control" name="playerInfo.address.zipcode" placeholder="Enter Pincode">
                   </div>
 
 

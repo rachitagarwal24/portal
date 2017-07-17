@@ -11,7 +11,7 @@ import org.hibernate.SessionFactory;
 import org.hibernate.Transaction;
 import org.hibernate.cfg.Configuration;
 
-public class PlayerDao {
+public class PlayerDao {	
 	
 	public Integer addPlayer(Player player){
       Session session = HibernateUtil.getSessionFactory().openSession();
@@ -32,29 +32,21 @@ public class PlayerDao {
       return playerID;
    }
    
-	public Integer addRegister(Address address,PlayerInfo playerInfo,PlayerAuth playerAuth){
+	public Integer addRegister(PlayerAuth playerAuth){
 	      Session session = HibernateUtil.getSessionFactory().openSession();
 	      Transaction tx = null;
 	      Integer playerID = null;
 	      try{
 	         tx = session.beginTransaction();
 	         
-	        // Address address1 = new Address("OMR Road", "Chennai", "TN", "600097");
-	        // PlayerInfo playerInfo2=new PlayerInfo("Rachit","Agarwal","829389",address1);
-	        // playerID=(Integer)session.save(playerInfo2);
-	         
-	        // System.out.println("YAHA"+playerInfo.getAddress().getCity());
-	         
-	       //  session.save(address);
-	         PlayerInfo playerInfo2=new PlayerInfo(playerInfo.getFname(),playerInfo.getLname(),playerInfo.getPhoneno(),playerInfo.getAge(),address);
-	         PlayerAuth playerAuth2=new PlayerAuth(playerAuth.getEmail(), playerAuth.getPassword(), playerInfo2);
-	         playerID = (Integer) session.save(playerAuth2);
+	         System.out.println("YES   YES  YES");
+	         playerID = (Integer) session.save(playerAuth);
 	         
 	         //System.out.println("Player ID: "+playerID);
 	         
 	         tx.commit();
 	      }catch (HibernateException e) {
-	         if (tx!=null)
+		         if (tx!=null)
 	        	 tx.rollback();
 	         e.printStackTrace(); 
 	      }finally {
@@ -168,9 +160,7 @@ public class PlayerDao {
 		   info.setAddress(addr);
 		   playerinfos.add(info);
 		   
-		    String client = String.valueOf(obj[1]); // don't know the type of column CLIENT assuming String 
-		    //Integer service = Integer.parseInt(String.valueOf(obj[1])); //SERVICE assumed as int
-		    
+		    String client = String.valueOf(obj[1]); // 
 		    System.out.println(":AAAAAAAAAAAA"+client);
 		    
 		    //same way for all obj[2], obj[3], obj[4]
