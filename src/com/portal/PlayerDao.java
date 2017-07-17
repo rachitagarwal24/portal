@@ -55,7 +55,7 @@ public class PlayerDao {
       return playerID;
 	}
 	
-   public boolean find(String email,String password){
+   public int find(String email,String password){
 	   Session session=HibernateUtil.getSessionFactory().openSession();
 	   System.out.println("Name is "+email+"Password is"+password);
 	   
@@ -66,20 +66,21 @@ public class PlayerDao {
 	        query.setParameter("pass", password);
 	        List<PlayerAuth> list = query.list();
 	        */
-		   
-		   List<PlayerAuth> list= session.createCriteria(PlayerAuth.class).add(Restrictions.eq("email", email)).add(Restrictions.eq("password", password)).list();
-		   
+		    
+		    List<PlayerAuth> list= session.createCriteria(PlayerAuth.class).add(Restrictions.eq("email", email)).add(Restrictions.eq("password", password)).list();
+		    
 	        if (list.size() > 0) {
 	            session.close();
-	            return true;
+	            return list.get(0).getLoginid();
 	        }
+	        
 		   
 		}catch(HibernateException e) {
 		    e.printStackTrace();
 	   }
 	   session.close();
 	   
-	   return false;
+	   return 0;
    }
    
    

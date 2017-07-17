@@ -9,14 +9,21 @@ import com.opensymphony.xwork2.ActionSupport;
 import com.opensymphony.xwork2.ModelDriven;
 
 public class LoginAction extends ActionSupport implements ModelDriven<PlayerAuth>,SessionAware  {
-	 
+	
+	private int login;
 	SessionMap<String,String> sessionmap;
     PlayerAuth playerAuth=new PlayerAuth();  
 	PlayerDao dao = new PlayerDao();
+
     
     @Override
     public String execute() {
-        if (dao.find(playerAuth.getEmail(), playerAuth.getPassword())) {
+    	login=dao.find(playerAuth.getEmail(), playerAuth.getPassword());
+        if (login!=0) {
+        	 System.out.println("AAAA"+login);
+        	 sessionmap.put("login", "true");
+        	 sessionmap.put("loginId",String.valueOf(login));
+        	 
              return SUCCESS;
         } else {
             this.addActionError("Invalid username and password");
@@ -37,7 +44,7 @@ public class LoginAction extends ActionSupport implements ModelDriven<PlayerAuth
 
 	public void setSession(Map map) {
 		sessionmap=(SessionMap)map;
-		sessionmap.put("login", "true");
+		
 	}
     
     public String logout(){  

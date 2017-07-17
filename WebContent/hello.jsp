@@ -7,7 +7,7 @@
 <title>Insert title here</title>
 </head>
 <body>
-<b>Welcome,<s:property value="email"/></b>
+<b>Welcome,<s:property value="#session.loginId"/></b>
 
 </br>
 	<a href="logout">logout</a>
