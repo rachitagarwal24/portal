@@ -12,6 +12,8 @@ import org.hibernate.Transaction;
 import org.hibernate.cfg.Configuration;
 import org.hibernate.criterion.Restrictions;
 
+import com.sun.org.apache.xpath.internal.Expression;
+
 public class PlayerDao {	
 	
 	public Integer addPlayer(Player player){
@@ -51,19 +53,22 @@ public class PlayerDao {
          session.close(); 
       }
       return playerID;
-   }
-	   
+	}
 	
    public boolean find(String email,String password){
 	   Session session=HibernateUtil.getSessionFactory().openSession();
 	   System.out.println("Name is "+email+"Password is"+password);
 	   
 	   try{
-		   String sql = " from com.portal.PlayerAuth u where u.email=:email and u.password=:pass";
+		   /*String sql = " from com.portal.PlayerAuth u where u.email=:email and u.password=:pass";
 	        Query query = session.createQuery(sql);
 	        query.setParameter("email", email);
 	        query.setParameter("pass", password);
-	        List<Player> list = query.list();
+	        List<PlayerAuth> list = query.list();
+	        */
+		   
+		   List<PlayerAuth> list= session.createCriteria(PlayerAuth.class).add(Restrictions.eq("email", email)).add(Restrictions.eq("password", password)).list();
+		   
 	        if (list.size() > 0) {
 	            session.close();
 	            return true;

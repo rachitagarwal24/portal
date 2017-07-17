@@ -33,17 +33,7 @@ public class AddActionPlayer extends ActionSupport implements ModelDriven<Player
 		*/
 	}
 	
-	public String listPlayers(){
-		players = dao.getPlayers();
 	
-		 for (Iterator iterator = players.iterator(); iterator.hasNext();){
-				Player employee = (Player) iterator.next(); 
-				System.out.print("YEs: " + employee.getName()); 
-				
-		 }
-			
-		return "success";
-	}
 		
 	public Player getPlayer(){
 		return player;
