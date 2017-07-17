@@ -5,3 +5,6 @@ Resolved by chetan sir : by changing url of config file :- http://hibernate.sour
 
 
 Login page is yet to be made
+
+Login page is done 
+And ModelDriven Interface problem solved 
