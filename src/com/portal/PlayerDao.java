@@ -33,27 +33,24 @@ public class PlayerDao {
    }
    
 	public Integer addRegister(PlayerAuth playerAuth){
-	      Session session = HibernateUtil.getSessionFactory().openSession();
-	      Transaction tx = null;
-	      Integer playerID = null;
-	      try{
-	         tx = session.beginTransaction();
-	         
-	         System.out.println("YES   YES  YES");
-	         playerID = (Integer) session.save(playerAuth);
-	         
-	         //System.out.println("Player ID: "+playerID);
-	         
-	         tx.commit();
-	      }catch (HibernateException e) {
-		         if (tx!=null)
-	        	 tx.rollback();
-	         e.printStackTrace(); 
-	      }finally {
-	         session.close(); 
-	      }
-	      return playerID;
-	   }
+      Session session = HibernateUtil.getSessionFactory().openSession();
+      Transaction tx = null;
+      Integer playerID = null;
+      try{
+         tx = session.beginTransaction();
+         	System.out.println("YES   YES  YES");
+         playerID = (Integer) session.save(playerAuth);
+         //System.out.println("Player ID: "+playerID);
+         tx.commit();
+      }catch (HibernateException e) {
+	         if (tx!=null)
+        	 tx.rollback();
+         e.printStackTrace(); 
+      }finally {
+         session.close(); 
+      }
+      return playerID;
+   }
 	   
 	
    public boolean find(String email,String password){
