@@ -20,6 +20,11 @@
 		<result name="success">login.jsp</result>  
 	 </action>  
      
+     <action name="login.jsp" class="com.portal.LoginAction" method="logout">  
+		<result name="success">login.jsp</result>  
+	 </action>  
+     
+     
      <action name="registermany" class="com.portal.AddActionRegister" method="execute">
      	<result name="success" type="redirect">Pregister.jsp</result>
      </action> 

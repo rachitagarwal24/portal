@@ -96,6 +96,9 @@ public class PlayerDao {
 		
 		 playerinfos=session.createCriteria(PlayerInfo.class).list();
 		 
+		 
+		 System.out.println("YES");
+		 
 		 //Alternative code for owned session is closed error 
 		 
 		 //System.out.println("fsdfsdfsd");
