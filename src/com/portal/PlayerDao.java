@@ -12,20 +12,9 @@ import org.hibernate.Transaction;
 import org.hibernate.cfg.Configuration;
 
 public class PlayerDao {
-	private static SessionFactory factory; 
 	
-	public PlayerDao(){
-		try{
-	         factory = new Configuration().configure().buildSessionFactory();
-	      }catch (Throwable ex) { 
-	         System.err.println("Failed to create sessionFactory object." + ex);
-	         throw new ExceptionInInitializerError(ex); 
-	     }
-	}
-	
-
 	public Integer addPlayer(Player player){
-      Session session = factory.openSession();
+      Session session = HibernateUtil.getSessionFactory().openSession();
       Transaction tx = null;
       Integer playerID = null;
       try{
@@ -44,7 +33,7 @@ public class PlayerDao {
    }
    
 	public Integer addRegister(Address address,PlayerInfo playerInfo,PlayerAuth playerAuth){
-	      Session session = factory.openSession();
+	      Session session = HibernateUtil.getSessionFactory().openSession();
 	      Transaction tx = null;
 	      Integer playerID = null;
 	      try{
@@ -76,7 +65,7 @@ public class PlayerDao {
 	   
 	
    public boolean find(String email,String password){
-	   Session session=factory.openSession();
+	   Session session=HibernateUtil.getSessionFactory().openSession();
 	   Transaction tx=null;
 	   
 	   System.out.println("Name is "+email+"Password is"+password);
@@ -106,7 +95,7 @@ public class PlayerDao {
    public List<Player> getPlayers()
    {
 	   List<Player> players=new ArrayList<Player>();
-	   Session session=factory.openSession();
+	   Session session=HibernateUtil.getSessionFactory().openSession();
 	   Transaction tx=null;
 	   try
 	   {
@@ -137,7 +126,7 @@ public class PlayerDao {
 	   List playerinfos=new ArrayList();
 	   List playerinfos1=new ArrayList();
 	   List playerinfos2=new ArrayList();
-	   Session session=factory.openSession();
+	   Session session=HibernateUtil.getSessionFactory().openSession();
 	   Transaction tx=null;
 	   try
 	   {
