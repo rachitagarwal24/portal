@@ -26,9 +26,13 @@
       
       <action name="loginprocess" method="execute" class="com.portal.LoginAction">
       	 <result name="success" type="redirect">/hello.jsp</result>
-         <result name="input" type="redirect">/student.jsp</result>
+         <result name="input" type="redirect">/Pregister.jsp</result>
       </action>
-      
+    <action name="officerlogin" method="officerLogin" class="com.portal.AddActionOfficer">
+      	<result name="success" type="redirect">listPlayer</result>
+      	 <result name="input" type="redirect">Oregister.jsp</result>
+      </action>
+    
       <action name="updateInfo">
          <result >updatePlayerInfo.jsp</result>
        </action>
@@ -38,7 +42,7 @@
       </action>
       
       <action name="addOfficer" method="execute" class="com.portal.AddActionOfficer">
-         <result name="success" type="redirect">student.jsp</result>
+         <result name="success" type="redirect">Oregister.jsp</result>
        
       </action>
       

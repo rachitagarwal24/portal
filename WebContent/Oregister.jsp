@@ -58,14 +58,14 @@
             <div class = "tab-pane fade" id = "register">
 
               <div class="modal-body" style="padding:40px 250px;">
-                <form role="form"  action="officerregister" validate="true">
+                <form role="form"  action="addOfficer" validate="true">
                   <div class="form-group">
                     <label for="fname">First Name</label>
-                    <input type="text" class="form-control" name="playerInfo.fname" placeholder="First name">
+                    <input type="text" class="form-control" name="fname" placeholder="First name">
                   </div>
                   <div class="form-group">
                     <label for="lname">Last Name</label>
-                    <input type="text" class="form-control" name="playerInfo.lname" placeholder="Last name">
+                    <input type="text" class="form-control" name="lname" placeholder="Last name">
                   </div>
                   <div class="form-group">
                     <label for="email">Enter Email</label>
@@ -76,31 +76,10 @@
                     <input type="password" class="form-control" name="password" placeholder="Enter password">
                   </div>
                   <div class="form-group">
-                    <label for="dof">Enter Age</label>
-                    <input type="text" class="form-control" name="playerInfo.age" placeholder="Enter date">
-                  </div>
-                  <div class="form-group">
                     <label for="phoneno">Enter Phone No</label>
-                    <input type="tel" class="form-control" name="playerInfo.phoneno" placeholder="Enter phoneno">
+                    <input type="tel" class="form-control" name="phoneno" placeholder="Enter phoneno">
                   </div>
-                  <div class="form-group">
-                    <label for="street">Enter Address-Street</label>
-                    <input type="text" class="form-control" name="playerInfo.address.street" placeholder="Enter street name and no.">
-                  </div>
-                  <div class="form-group">
-                    <label for="city">Enter Address-City</label>
-                    <input type="text" class="form-control" name="playerInfo.address.city" placeholder="Enter City">
-                  </div>
-                  <div class="form-group">
-                    <label for="state">Enter Address-State</label>
-                    <input type="text" class="form-control" name="playerInfo.address.state" placeholder="Enter State">
-                  </div>
-                  <div class="form-group">
-                    <label for="zipcode">Enter Address-ZipCode</label>
-                    <input type="text" class="form-control" name="playerInfo.address.zipcode" placeholder="Enter Pincode">
-                  </div>
-
-
+             
                   <button type="submit" class="btn btn-block">Register</button>
                 </form>
               </div>

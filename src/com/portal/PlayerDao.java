@@ -101,6 +101,26 @@ public class PlayerDao {
 	   
 	   return 0;
    }
+   public int findOfficer(String email,String password){
+	   Session session=HibernateUtil.getSessionFactory().openSession();
+	   System.out.println("Name is "+email+"Password is"+password);
+	   
+	   try{
+		    List<Officer> list= session.createCriteria(Officer.class).add(Restrictions.eq("email", email)).add(Restrictions.eq("password", password)).list();
+		    
+	        if (list.size() > 0) {
+	            session.close();
+	            return list.get(0).getLoginid();
+	        }
+	        
+		   
+		}catch(HibernateException e) {
+		    e.printStackTrace();
+	   }
+	   session.close();
+	   
+	   return 0;
+   }
    
    
    public List getPlayerInfos()
