@@ -47,7 +47,7 @@
       </div>
       
       <div class="modal-body" style="padding:20px 10px;">
-                <form role="form"  action="update" validate="true">
+                <form role="form"  action="updateParti" validate="true">
                 
                  <input type="hidden" name="loginId" value="<%=loginId%>" >
                 <div class="form-inline" style="margin-left: 140px;">
@@ -106,7 +106,7 @@
               </div>
 
         <div class="modal-footer">
-          <a href="Oregister.jsp">
+        <a href="Pregister.jsp">
           <button type="submit" class="btn  btn-default " data-dismiss="modal">Logout</button>
           </a>
         </div>

@@ -25,20 +25,35 @@
      </action> 
       
       <action name="loginprocess" method="execute" class="com.portal.LoginAction">
-      	 <result name="success" type="redirect">/hello.jsp</result>
+      	 <result name="success" type="redirect">particularPlayer</result>
          <result name="input" type="redirect">/Pregister.jsp</result>
       </action>
+      
+      <action name="particularPlayer" method="particularPlayerInfo" class="com.portal.AddActionRegister">
+         <result name="success" >/player.jsp</result>
+         
+      </action>
+      
+      
     <action name="officerlogin" method="officerLogin" class="com.portal.AddActionOfficer">
       	<result name="success" type="redirect">listPlayer</result>
       	 <result name="input" type="redirect">Oregister.jsp</result>
       </action>
+       <action name="officerlogout" class="com.portal.AddActionOfficer" method="logout">  
+		<result name="success" type="redirect">Oregister.jsp</result>  
+	 </action>  
     
       <action name="updateInfo">
          <result >updatePlayerInfo.jsp</result>
        </action>
-      
+        <action name="updateInfopart">
+         <result >updateOwnInfo.jsp</result>
+       </action>
       <action name="update" method="execute" class="com.portal.ActionUpdate">
       	 <result name="success" type="redirect">listPlayer</result>
+      </action>
+       <action name="updateParti" method="execute" class="com.portal.ActionUpdate">
+      	 <result name="success" type="redirect">particularPlayer</result>
       </action>
       
       <action name="addOfficer" method="execute" class="com.portal.AddActionOfficer">

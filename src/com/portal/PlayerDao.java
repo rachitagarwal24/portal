@@ -90,7 +90,7 @@ public class PlayerDao {
 		    
 	        if (list.size() > 0) {
 	            session.close();
-	            return list.get(0).getLoginid();
+	            return list.get(0).getPlayerInfo().getLoginId();
 	        }
 	        
 		   
@@ -121,6 +121,26 @@ public class PlayerDao {
 	   
 	   return 0;
    }
+   
+   public List getParticularPlayerInfo(int playerId)
+   {
+	   List<PlayerInfo> playerinfo=new ArrayList<>();
+	
+	   Session session=HibernateUtil.getSessionFactory().openSession();
+	   try
+	   {
+		 playerinfo=session.createCriteria(PlayerInfo.class).add(Restrictions.eq("loginId", playerId)).list();
+		  
+	   }catch(HibernateException e){
+			   e.printStackTrace();
+	
+	   }finally {
+		   session.close();
+		
+	   }
+	   return playerinfo;
+   }
+   
    
    
    public List getPlayerInfos()

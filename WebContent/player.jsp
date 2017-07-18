@@ -41,7 +41,7 @@
 	         <th>Edit</th>
 	      </tr>
 	      </thead>
-	      <s:iterator value="playerinfos">
+	      <s:iterator value="playerinfos1">
 	      <tbody>
 	      <tr>
 	          <td><s:property value="loginId"/></td>
@@ -49,7 +49,7 @@
 	          <td><s:property value="phoneno"/></td>
 	          <td><s:property value="age"/></td>
 	          <td><s:property value="address.street"/>, <s:property value="address.city"/>,</br> <s:property value="address.state"/>, <s:property value="address.zipcode"/></td>
-	          <td><a href="<s:url namespace="/" action="updateInfo">
+	          <td><a href="<s:url namespace="/" action="updateInfopart">
         <s:param name="loginId" value="%{loginId}" />
         <s:param name="fname" value="%{fname}" />
         <s:param name="lname" value="%{lname}" />
@@ -69,8 +69,8 @@
 	      </s:iterator>	
 	   </table>
 	   <div class="modal-footer">
-        <a href="officerlogout">
-        <button type="submit" class="btn  btn-default " data-dismiss="modal">Officer Logout</button>
+        <a href="#">
+        <button type="submit" class="btn  btn-default " data-dismiss="modal">player Logout</button>
         </a>
       </div>
 	   

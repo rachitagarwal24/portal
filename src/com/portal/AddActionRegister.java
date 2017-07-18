@@ -4,6 +4,9 @@ import java.util.ArrayList;
 import java.util.Iterator;
 import java.util.List;
 
+import org.apache.struts2.dispatcher.SessionMap;
+
+import com.opensymphony.xwork2.ActionContext;
 import com.opensymphony.xwork2.ActionSupport;
 import com.opensymphony.xwork2.ModelDriven;
 
@@ -13,6 +16,7 @@ public class AddActionRegister extends ActionSupport implements ModelDriven<Play
 	PlayerAuth playerAuth=new PlayerAuth();
 	PlayerDao dao=new PlayerDao();
 	List playerinfos=new ArrayList();
+	List<PlayerAuth> playerinfos1=new ArrayList();
 
 	public String execute(){
 		//System.out.println("aaaAAAAA"+street);
@@ -30,6 +34,28 @@ public class AddActionRegister extends ActionSupport implements ModelDriven<Play
 		
 	}
 	
+	public String particularPlayerInfo(){
+		System.out.println("QQQQQQQQAAAAA"+ActionContext.getContext().getSession().get("loginId"));
+		 int playerId=Integer.parseInt(ActionContext.getContext().getSession().get("loginId").toString());
+		
+		
+		 playerinfos1=dao.getParticularPlayerInfo(playerId);
+		return "success";
+		
+	}
+	
+	
+	
+	
+	
+	public List<PlayerAuth> getPlayerinfos1() {
+		return playerinfos1;
+	}
+
+	public void setPlayerinfos1(List<PlayerAuth> playerinfos1) {
+		this.playerinfos1 = playerinfos1;
+	}
+
 	public List<PlayerInfo> getPlayerinfos() {
 		return playerinfos;
 	}
