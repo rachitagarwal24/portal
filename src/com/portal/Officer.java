@@ -1,26 +1,21 @@
 package com.portal;
 
-public class Player {
+public class Officer {
 	private int loginid;
 	private String name;
 	private String email;
 	private String password;
 	private String phoneno;
 	
-	public Player(){}
+	public Officer(){}
 	
-	public Player(int loginid, String name, String email, String password, String phoneno) {
+	public Officer(int loginid, String name, String email, String password, String phoneno) {
 		this.loginid = loginid;
 		this.name = name;
 		this.email = email;
 		this.password = password;
 		this.phoneno = phoneno;
 	} 
-    // Address address1 = new Address("OMR Road", "Chennai", "TN", "600097");
-    // PlayerInfo playerInfo2=new PlayerInfo("Rachit","Agarwal","829389",address1);
-    // playerID=(Integer)session.save(playerInfo2);
-     
-    // System.out.println("YAHA"+playerInfo.getAddress().getCity());
 
 	public int getLoginid() {
 		return loginid;

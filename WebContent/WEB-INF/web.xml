@@ -3,7 +3,7 @@
   
   <display-name>portal</display-name>
   <welcome-file-list>
- 		<welcome-file>student.jsp</welcome-file>
+ 		<welcome-file>Pregister.jsp</welcome-file>
   </welcome-file-list>
   
   <filter>

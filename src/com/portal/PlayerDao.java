@@ -16,13 +16,13 @@ import com.sun.org.apache.xpath.internal.Expression;
 
 public class PlayerDao {	
 	
-	public Integer addPlayer(Player player){
+	public Integer addOfficer(Officer officer){
       Session session = HibernateUtil.getSessionFactory().openSession();
       Transaction tx = null;
       Integer playerID = null;
       try{
          tx = session.beginTransaction();
-         playerID = (Integer) session.save(player);
+         playerID = (Integer) session.save(officer);
          //System.out.println("Player ID: "+playerID);
          tx.commit();
       }catch (HibernateException e) {
@@ -53,6 +53,25 @@ public class PlayerDao {
          session.close(); 
       }
       return playerID;
+	}
+	
+	public void updateInfo(PlayerInfo playerInfo){
+      Session session = HibernateUtil.getSessionFactory().openSession();
+      Transaction tx = null;
+      Integer playerID = null;
+      try{
+         tx = session.beginTransaction();
+         //	System.out.println("YES   YES  YES");
+         session.update(playerInfo);
+         tx.commit();
+      }catch (HibernateException e) {
+	         if (tx!=null)
+        	 tx.rollback();
+         e.printStackTrace(); 
+      }finally {
+         session.close(); 
+      }
+      
 	}
 	
    public int find(String email,String password){

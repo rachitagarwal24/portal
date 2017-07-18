@@ -3,7 +3,7 @@
 "http://hibernate.sourceforge.net/hibernate-mapping-3.0.dtd">
 <!-- Generated 6 Jul, 2017 11:13:19 AM by Hibernate Tools 3.5.0.Final -->
 <hibernate-mapping>
-    <class name="com.portal.Player" table="login">
+    <class name="com.portal.Officer" table="login">
         <id name="loginid" type="int">
             <column name="loginid" />
             <generator class="assigned" />

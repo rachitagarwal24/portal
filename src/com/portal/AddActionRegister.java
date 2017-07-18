@@ -1,4 +1,4 @@
-	package com.portal;
+package com.portal;
 
 import java.util.ArrayList;
 import java.util.Iterator;
@@ -26,13 +26,9 @@ public class AddActionRegister extends ActionSupport implements ModelDriven<Play
 	public String listPlayerInfo(){
 		
 		playerinfos=dao.getPlayerInfos();
-		
-		
-		
 		return "success";
 		
 	}
-	
 	
 	public List<PlayerInfo> getPlayerinfos() {
 		return playerinfos;

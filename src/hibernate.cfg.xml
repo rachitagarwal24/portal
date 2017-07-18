@@ -23,7 +23,7 @@
 
    <!-- List of XML mapping files -->
    
-   <mapping resource="player.hbm.xml"/>
+   <mapping resource="officer.hbm.xml"/>
    <mapping resource="PlayerAuth.hbm.xml"/> 
    <mapping resource="PlayerInfo.hbm.xml"/>
    <mapping resource="Address.hbm.xml"/> 

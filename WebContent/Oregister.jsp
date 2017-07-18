@@ -3,6 +3,7 @@
 <head>
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <link rel="stylesheet" href="css/bootstrap.min.css">
+  <title>Portal</title>
   <script src="js/jquery.min.js"></script>
   <script src="js/bootstrap.min.js"></script>
   <style>
@@ -24,7 +25,7 @@
  
     <div class="modal-content">
       <div class="modal-header" style="padding:35px 200px;">
-        <h4>Portal - Player's Login </h4>
+        <h4>Portal - Officer's Login </h4>
       </div>
       
         <ul id = "myTab" class = "nav nav-tabs" style="padding-left: 400px;">
@@ -40,7 +41,7 @@
             <div class = "tab-pane fade in active" id = "login">
 
               <div class="modal-body" style="padding:40px 250px;">
-                <form role="form" action="loginprocess">
+                <form role="form" action="officerlogin">
                   <div class="form-group">
                     <label for="usrname">Enter Email</label>
                     <input type="text" class="form-control" name="email" placeholder="Enter email">
@@ -57,7 +58,7 @@
             <div class = "tab-pane fade" id = "register">
 
               <div class="modal-body" style="padding:40px 250px;">
-                <form role="form"  action="registermany" validate="true">
+                <form role="form"  action="officerregister" validate="true">
                   <div class="form-group">
                     <label for="fname">First Name</label>
                     <input type="text" class="form-control" name="playerInfo.fname" placeholder="First name">
@@ -110,8 +111,8 @@
 
 
       <div class="modal-footer">
-        <a href="Oregister.jsp">
-        <button type="submit" class="btn  btn-default " data-dismiss="modal">Officer</button>
+        <a href="Pregister.jsp">
+        <button type="submit" class="btn  btn-default " data-dismiss="modal">Player</button>
         </a>
       </div>
     </div>

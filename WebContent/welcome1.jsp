@@ -51,8 +51,18 @@
 	          <td><s:property value="phoneno"/></td>
 	          <td><s:property value="age"/></td>
 	          <td><s:property value="address.street"/>, <s:property value="address.city"/>,</br> <s:property value="address.state"/>, <s:property value="address.zipcode"/></td>
-	          <td><a href="<s:url namespace="/staff" action="complaintDetails">
-        <s:param name="compNum" value="%{loginId}" /></s:url>">
+	          <td><a href="<s:url namespace="/" action="updateInfo">
+        <s:param name="loginId" value="%{loginId}" />
+        <s:param name="fname" value="%{fname}" />
+        <s:param name="lname" value="%{lname}" />
+        <s:param name="phoneno" value="%{phoneno}" />
+        <s:param name="age" value="%{age}" />
+        <s:param name="street" value="%{address.street}" />
+        <s:param name="city" value="%{address.city}" />
+        <s:param name="state" value="%{address.state}" />
+        <s:param name="zipcode" value="%{address.zipcode}" />
+        
+        </s:url>">
 	   	       
 	          
 	          Edit</a></td>

@@ -29,9 +29,17 @@
          <result name="input" type="redirect">/student.jsp</result>
       </action>
       
-      <action name="addPlayer" method="execute" class="com.portal.AddActionPlayer">
-         <result name="success" type="redirect">listPlayer</result>
-         <result name="error" type="redirect">register-error.jsp</result>  
+      <action name="updateInfo">
+         <result >updatePlayerInfo.jsp</result>
+       </action>
+      
+      <action name="update" method="execute" class="com.portal.ActionUpdate">
+      	 <result name="success" type="redirect">listPlayer</result>
+      </action>
+      
+      <action name="addOfficer" method="execute" class="com.portal.AddActionOfficer">
+         <result name="success" type="redirect">student.jsp</result>
+       
       </action>
       
       <action name="listPlayer" method="listPlayerInfo"
