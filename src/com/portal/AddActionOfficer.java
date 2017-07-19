@@ -17,11 +17,7 @@ public class AddActionOfficer extends ActionSupport implements ModelDriven<Offic
 	SessionMap<String,String> sessionmap;
 	Officer officer=new Officer();
 	PlayerDao dao=new PlayerDao();
-	
-	public Officer getModel() {
-		return officer;
-	}
-	
+
 	public String execute(){
 		int i=dao.addOfficer(officer);
 		
@@ -34,7 +30,7 @@ public class AddActionOfficer extends ActionSupport implements ModelDriven<Offic
         if (loginofficer!=0) {
         	 System.out.println("BBBBB"+loginofficer);
         	 sessionmap.put("loginofficer", "true");
-        	 sessionmap.put("loginId",String.valueOf(loginofficer));
+        	 sessionmap.put("loginIdO","23");
         	 
              return SUCCESS;
         } else {
@@ -43,14 +39,14 @@ public class AddActionOfficer extends ActionSupport implements ModelDriven<Offic
         System.out.println("NOOOO");
         return INPUT;
 	}
-	 public String logout(){  
+	 
+	public String logout(){  
 		 	
 		 System.out.println("QQQQQQQQQQQQQQQQQ");
-	        sessionmap.invalidate();  
-	        return "success";  
+	    sessionmap.invalidate();  
+	    return "success";  
 	 }
 
-	
 
 	public Officer getOfficer() {
 		return officer;
@@ -60,9 +56,12 @@ public class AddActionOfficer extends ActionSupport implements ModelDriven<Offic
 		this.officer = officer;
 	}
 
-	@Override
 	public void setSession(Map map) {
 		sessionmap=(SessionMap)map;		
+	}
+	
+	public Officer getModel() {
+		return officer;
 	}
 	
 }

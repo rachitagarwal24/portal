@@ -1,4 +1,5 @@
 <!DOCTYPE html>
+<%@page import="com.opensymphony.xwork2.ActionContext"%>
 <html>
 <head>
   <meta name="viewport" content="width=device-width, initial-scale=1">
@@ -17,7 +18,16 @@
   }
   </style>
 </head>
-<body>
+<body>	
+<%
+if(ActionContext.getContext().getSession().get("loginId")!=null)
+{
+	response.sendRedirect("particularPlayer");
+}
+
+
+%>
+
 
 <div class="container">
  <div class="raw">   

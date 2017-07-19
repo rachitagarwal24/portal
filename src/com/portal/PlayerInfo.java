@@ -13,12 +13,7 @@ public class PlayerInfo implements java.io.Serializable {
 	
 	public PlayerInfo(){
 	}
-	
-	/*
-	 * public PlayerInfo(Address address){
-		this.address=address;
-	}
-	*/
+
 	public PlayerInfo(String fname, String lname, String phoneno, int age,Address address) {
 		this.fname = fname;
 		this.lname = lname;

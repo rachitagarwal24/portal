@@ -19,9 +19,6 @@ public class AddActionRegister extends ActionSupport implements ModelDriven<Play
 	List<PlayerAuth> playerinfos1=new ArrayList();
 
 	public String execute(){
-		//System.out.println("aaaAAAAA"+street);
-		
-		//System.out.println("AAAAAAA"+playerInfo.getAge());
 		
 		int i=dao.addRegister(playerAuth);
 		 return "success";
@@ -49,10 +46,6 @@ public class AddActionRegister extends ActionSupport implements ModelDriven<Play
 		
 	}
 	
-	
-	
-	
-	
 	public List<PlayerAuth> getPlayerinfos1() {
 		return playerinfos1;
 	}
@@ -69,8 +62,6 @@ public class AddActionRegister extends ActionSupport implements ModelDriven<Play
 		this.playerinfos = playerinfos;
 	}
 
-	
-	
 	public PlayerAuth getPlayerAuth() {
 		return playerAuth;
 	}
@@ -80,9 +71,6 @@ public class AddActionRegister extends ActionSupport implements ModelDriven<Play
 	}
 
 	public PlayerAuth getModel() {
-		// TODO Auto-generated method stub
-		//System.out.println("LLLLL"+playerInfo.getAddress().getCity());
-	    
 		return playerAuth;
 	}
 	
