@@ -16,8 +16,8 @@
 		<result>Pregister.jsp</result>  
 	  </action>  
      
-     <action name="logout" class="com.portal.LoginAction" method="logout">  
-		<result name="success">login.jsp</result>  
+     <action name="logoutplayer" class="com.portal.LoginAction" method="logout">  
+		<result name="success" type="redirect">Pregister.jsp</result>  
 	 </action>  
      
      <action name="registermany" class="com.portal.AddActionRegister" method="execute">
@@ -26,18 +26,18 @@
       
       <action name="loginprocess" method="execute" class="com.portal.LoginAction">
       	 <result name="success" type="redirect">particularPlayer</result>
-         <result name="input" type="redirect">/Pregister.jsp</result>
+         <result name="input" type="redirect">Pregister-error.jsp</result>
       </action>
       
       <action name="particularPlayer" method="particularPlayerInfo" class="com.portal.AddActionRegister">
          <result name="success" >/player.jsp</result>
-         
+         <result name="loginpage" >Pregister.jsp</result>
       </action>
       
       
     <action name="officerlogin" method="officerLogin" class="com.portal.AddActionOfficer">
       	<result name="success" type="redirect">listPlayer</result>
-      	 <result name="input" type="redirect">Oregister.jsp</result>
+      	 <result name="input" type="redirect">register-error.jsp</result>
       </action>
        <action name="officerlogout" class="com.portal.AddActionOfficer" method="logout">  
 		<result name="success" type="redirect">Oregister.jsp</result>  

@@ -29,7 +29,7 @@
       <div class="modal-header" style="padding:35px 200px;">
         <h4>Portal - Player's Login </h4>
       </div>
-
+<s:if test="%{#session.login!=null}">
 	 <table class="table">
 	      <thead>
 	      <tr>
@@ -68,8 +68,14 @@
 	      </tbody>     
 	      </s:iterator>	
 	   </table>
+	   </s:if>
+	   	   <s:else>
+	   	   <%System.out.println("AAAAAAAAAAAAAAAAAAAAA"); %>
+	   	   <h3>Please Login First :- <a href="Pregister.jsp">Click Here</a> </h3>
+	   	   
+	   	   </s:else>
 	   <div class="modal-footer">
-        <a href="#">
+        <a href="logoutplayer">
         <button type="submit" class="btn  btn-default " data-dismiss="modal">player Logout</button>
         </a>
       </div>

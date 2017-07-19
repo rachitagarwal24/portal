@@ -61,23 +61,23 @@
                 <form role="form"  action="addOfficer" validate="true">
                   <div class="form-group">
                     <label for="fname">First Name</label>
-                    <input type="text" class="form-control" name="fname" placeholder="First name">
+                    <input type="text" class="form-control" required="required" name="fname" placeholder="First name">
                   </div>
                   <div class="form-group">
                     <label for="lname">Last Name</label>
-                    <input type="text" class="form-control" name="lname" placeholder="Last name">
+                    <input type="text" class="form-control" required="required" name="lname" placeholder="Last name">
                   </div>
                   <div class="form-group">
                     <label for="email">Enter Email</label>
-                    <input type="text" class="form-control" name="email" placeholder="Enter email">
+                    <input type="text" class="form-control" required="required" name="email" placeholder="Enter email">
                   </div>
                   <div class="form-group">
                     <label for="psw">Password</label>
-                    <input type="password" class="form-control" name="password" placeholder="Enter password">
+                    <input type="password" class="form-control" required="required" name="password" placeholder="Enter password">
                   </div>
                   <div class="form-group">
                     <label for="phoneno">Enter Phone No</label>
-                    <input type="tel" class="form-control" name="phoneno" placeholder="Enter phoneno">
+                    <input type="tel" class="form-control" name="phoneno" required="required" placeholder="Enter phoneno">
                   </div>
              
                   <button type="submit" class="btn btn-block">Register</button>

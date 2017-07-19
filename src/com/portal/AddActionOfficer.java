@@ -44,9 +44,11 @@ public class AddActionOfficer extends ActionSupport implements ModelDriven<Offic
         return INPUT;
 	}
 	 public String logout(){  
+		 	
+		 System.out.println("QQQQQQQQQQQQQQQQQ");
 	        sessionmap.invalidate();  
 	        return "success";  
-}
+	 }
 
 	
 

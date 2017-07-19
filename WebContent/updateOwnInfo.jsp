@@ -29,7 +29,7 @@
 	String lname = ServletActionContext.getRequest().getParameter("lname");
 	String phoneno = ServletActionContext.getRequest().getParameter("phoneno");
 	int age = Integer.parseInt(ServletActionContext.getRequest().getParameter("age"));
-	String street = ServletActionContext.getRequest().getParameter("fname");
+	String street = ServletActionContext.getRequest().getParameter("street");
 	String city = ServletActionContext.getRequest().getParameter("city");
 	String state = ServletActionContext.getRequest().getParameter("state");
 	String zipcode= ServletActionContext.getRequest().getParameter("zipcode");
@@ -106,8 +106,8 @@
               </div>
 
         <div class="modal-footer">
-        <a href="Pregister.jsp">
-          <button type="submit" class="btn  btn-default " data-dismiss="modal">Logout</button>
+        <a href="logoutplayer">
+          <button type="submit" class="btn  btn-default " data-dismiss="modal">player Logout</button>
           </a>
         </div>
     </div>

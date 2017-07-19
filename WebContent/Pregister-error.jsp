@@ -19,7 +19,7 @@
 
 </div>
 </div>
-<s:include value="Oregister.jsp"></s:include>  
+<s:include value="Pregister.jsp"></s:include>  
 
 
 </body>

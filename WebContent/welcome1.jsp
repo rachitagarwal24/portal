@@ -27,9 +27,11 @@
  <div class="raw">
  <div class="modal-content">
       <div class="modal-header" style="padding:35px 200px;">
-        <h4>Portal - Player's Login </h4>
+        <h4>Portal - Officer's Login </h4>
       </div>
-
+	<s:if test="%{#session.loginofficer!=null}">
+    
+<%System.out.println(112131324); %>
 	 <table class="table">
 	      <thead>
 	      <tr>
@@ -68,9 +70,17 @@
 	      </tbody>     
 	      </s:iterator>	
 	   </table>
+	   	   </s:if>
+	   	   <s:else>
+	   	   <%System.out.println("AAAAAAAAAAAAAAAAAAAAA"); %>
+	   	   <h3>Please Login First :- <a href="Oregister.jsp">Click Here</a> </h3>
+	   	   
+	   	   </s:else>
+    
+	   
 	   <div class="modal-footer">
         <a href="officerlogout">
-        <button type="submit" class="btn  btn-default " data-dismiss="modal">Officer Logout</button>
+        <button type="submit" class="btn  btn-default " data-dismiss="modal">Officer_Logout</button>
         </a>
       </div>
 	   

@@ -35,12 +35,17 @@ public class AddActionRegister extends ActionSupport implements ModelDriven<Play
 	}
 	
 	public String particularPlayerInfo(){
-		System.out.println("QQQQQQQQAAAAA"+ActionContext.getContext().getSession().get("loginId"));
-		 int playerId=Integer.parseInt(ActionContext.getContext().getSession().get("loginId").toString());
+		if(ActionContext.getContext().getSession().get("loginId")!=null)
+		{ int playerId=Integer.parseInt(ActionContext.getContext().getSession().get("loginId").toString());
 		
 		
 		 playerinfos1=dao.getParticularPlayerInfo(playerId);
-		return "success";
+		 return "success";
+		}
+		else
+		{
+			return "loginpage";
+		}
 		
 	}
 	
