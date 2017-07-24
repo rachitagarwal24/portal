@@ -1,8 +1,5 @@
 package com.portal;
 
-import java.util.ArrayList;
-import java.util.Iterator;
-import java.util.List;
 import java.util.Map;
 
 import org.apache.struts2.dispatcher.SessionMap;
@@ -13,22 +10,22 @@ import com.opensymphony.xwork2.ModelDriven;
 
 public class AddActionOfficer extends ActionSupport implements ModelDriven<Officer>,SessionAware {
 
+	private static final long serialVersionUID = 1L;
 	private int loginofficer;
+	
 	SessionMap<String,String> sessionmap;
 	Officer officer=new Officer();
 	PlayerDao dao=new PlayerDao();
 
 	public String execute(){
-		int i=dao.addOfficer(officer);
-		
-			return "success";
-		
+		dao.addOfficer(officer);
+		return "success";
 	}
 	
 	public String officerLogin(){
 		loginofficer=dao.findOfficer(officer.getEmail(), officer.getPassword());
         if (loginofficer!=0) {
-        	 System.out.println("BBBBB"+loginofficer);
+        
         	 sessionmap.put("loginofficer", "true");
         	 sessionmap.put("loginIdO","23");
         	 
@@ -36,13 +33,11 @@ public class AddActionOfficer extends ActionSupport implements ModelDriven<Offic
         } else {
             this.addActionError("Invalid username and password");
         }
-        System.out.println("NOOOO");
+        
         return INPUT;
 	}
 	 
 	public String logout(){  
-		 	
-		 System.out.println("QQQQQQQQQQQQQQQQQ");
 	    sessionmap.invalidate();  
 	    return "success";  
 	 }
@@ -56,8 +51,9 @@ public class AddActionOfficer extends ActionSupport implements ModelDriven<Offic
 		this.officer = officer;
 	}
 
+	@SuppressWarnings("unchecked")
 	public void setSession(Map map) {
-		sessionmap=(SessionMap)map;		
+		sessionmap=(SessionMap<String, String>)map;		
 	}
 	
 	public Officer getModel() {

@@ -5,6 +5,8 @@ import com.opensymphony.xwork2.ModelDriven;
 
 public class ActionUpdate extends ActionSupport implements ModelDriven<PlayerInfo>{
 	
+	private static final long serialVersionUID = 1L;
+	
 	PlayerInfo playerInfo=new PlayerInfo();
 	PlayerDao dao=new PlayerDao();
 	

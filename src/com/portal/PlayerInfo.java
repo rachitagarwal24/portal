@@ -1,9 +1,8 @@
 package com.portal;
 
-import java.util.Date;
-
 public class PlayerInfo implements java.io.Serializable {
 	
+	private static final long serialVersionUID = 1L;
 	private int loginId;
 	private String fname;
 	private String lname;

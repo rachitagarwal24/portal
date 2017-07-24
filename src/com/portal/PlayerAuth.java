@@ -2,6 +2,8 @@ package com.portal;
 
 public class PlayerAuth implements java.io.Serializable {
 
+	private static final long serialVersionUID = 1L;
+	
 	private int loginid;
 	private String email;
 	private String password;

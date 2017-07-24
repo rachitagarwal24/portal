@@ -10,12 +10,13 @@ import com.opensymphony.xwork2.ModelDriven;
 
 public class LoginAction extends ActionSupport implements ModelDriven<PlayerAuth>,SessionAware  {
 	
+	private static final long serialVersionUID = 1L;
+	
 	private int login;
 	SessionMap<String,String> sessionmap;
     PlayerAuth playerAuth=new PlayerAuth();  
 	PlayerDao dao = new PlayerDao();
 
-    
     @Override
     public String execute() {
     	login=dao.find(playerAuth.getEmail(), playerAuth.getPassword());
@@ -31,20 +32,17 @@ public class LoginAction extends ActionSupport implements ModelDriven<PlayerAuth
         System.out.println("NOOOO");
         return INPUT;
     }
-     
     
     public PlayerAuth getPlayerAuth() {
 		return playerAuth;
 	}
 
-
-	public void setPlayerAuth(PlayerAuth playerAuth) {
+    public void setPlayerAuth(PlayerAuth playerAuth) {
 		this.playerAuth = playerAuth;
 	}
 
 	public void setSession(Map map) {
 		sessionmap=(SessionMap)map;
-		
 	}
     
     public String logout(){  
@@ -52,9 +50,7 @@ public class LoginAction extends ActionSupport implements ModelDriven<PlayerAuth
         return "success";  
     }
 
-
-	public PlayerAuth getModel() {
-		// TODO Auto-generated method stub
+    public PlayerAuth getModel() {
 		return playerAuth;
 	}  
 }

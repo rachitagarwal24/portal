@@ -1,18 +1,12 @@
 package com.portal;
 
 import java.util.ArrayList;
-import java.util.Iterator;
+
 import java.util.List;
-
 import org.hibernate.HibernateException;
-import org.hibernate.Query;
 import org.hibernate.Session;
-import org.hibernate.SessionFactory;
 import org.hibernate.Transaction;
-import org.hibernate.cfg.Configuration;
 import org.hibernate.criterion.Restrictions;
-
-import com.sun.org.apache.xpath.internal.Expression;
 
 public class PlayerDao {	
 	
@@ -40,7 +34,7 @@ public class PlayerDao {
       Integer playerID = null;
       try{
          tx = session.beginTransaction();
-         	System.out.println("YES   YES  YES");
+        
          playerID = (Integer) session.save(playerAuth);
          tx.commit();
       }catch (HibernateException e) {
@@ -56,7 +50,6 @@ public class PlayerDao {
 	public void updateInfo(PlayerInfo playerInfo){
       Session session = HibernateUtil.getSessionFactory().openSession();
       Transaction tx = null;
-      Integer playerID = null;
       try{
          tx = session.beginTransaction();
          session.update(playerInfo);
@@ -108,12 +101,10 @@ public class PlayerDao {
 		    e.printStackTrace();
 	   }
 	   session.close();
-	   
 	   return 0;
    }
    
-   public List getParticularPlayerInfo(int playerId)
-   {
+   public List<PlayerInfo> getParticularPlayerInfo(int playerId){
 	   List<PlayerInfo> playerinfo=new ArrayList<>();
 	
 	   Session session=HibernateUtil.getSessionFactory().openSession();
@@ -133,7 +124,7 @@ public class PlayerDao {
    
    
    
-   public List getPlayerInfos()
+   public List<PlayerInfo> getPlayerInfos()
    {
 	   List<PlayerInfo> playerinfos=new ArrayList<>();
 	

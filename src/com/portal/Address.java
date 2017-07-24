@@ -1,6 +1,9 @@
 package com.portal;
 
 public class Address implements java.io.Serializable {
+	
+	private static final long serialVersionUID = 1L;
+	
 	private int addressId;
 	private String street;
 	private String city;

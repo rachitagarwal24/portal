@@ -7,7 +7,6 @@ public class HibernateUtil {
 	
 	private static SessionFactory factory; 
 	
-	
 	static {
 		try{
 	         factory = new Configuration().configure().buildSessionFactory();
@@ -20,6 +19,4 @@ public class HibernateUtil {
 	public static SessionFactory getSessionFactory(){
 		return factory;
 	}
-	
-
 }
